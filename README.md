@@ -17,3 +17,5 @@ blogAPI\blogapitutorial\blogApi>py manage.py runserver
 blogAPI\blogapitutorial\blogApi>py manage.py makemigrations
 blogAPI\blogapitutorial\blogApi>py manage.py migrate
 
+# Install request library to virtual environment
+blogAPI\blogapitutorial\blogApi>pip install requests
