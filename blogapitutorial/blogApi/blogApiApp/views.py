@@ -42,7 +42,7 @@ def GetPost(request):
     post_id = request.data.get('post_id')
     try:
         post=Post.objects.get(id=post_id)
-        serializer = PostSerializer(post, many=True)
+        serializer = PostSerializer(post)
         return Response(serializer.data)
     except Post.DoesNotExist:
         return Response({'Error': 'The post does not exist'},status=404)

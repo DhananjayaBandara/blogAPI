@@ -5,3 +5,8 @@ class PostSerializer(ModelSerializer):
     class Meta:
         model = Post
         fields = '__all__'
+
+class PostSerializertwo(ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ['content']   # Serialize only the content field
