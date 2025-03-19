@@ -15,3 +15,14 @@ def GetAllPosts(request):
     serializer = PostSerializer(get_posts, many=True) # get_posts includes multiple items. So mention that parameter many=True
     
     return Response(serializer.data)
+
+@api_view(['GET','POST'])
+def CreatePost(request):
+    data = request.data
+    serializer = PostSerializer(data = data)
+    
+    if serializer.is_valid():
+        serializer.save()
+        return Response({'Success':'The post was successfully Created'},status=201)
+    else:
+        return Response(serializer.errors,status=400)
