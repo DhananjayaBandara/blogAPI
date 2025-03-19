@@ -10,8 +10,8 @@ def index(request):
     return Response({'Success':'The setup was successful'})
 
 @api_view(['GET'])
-def getAllPosts(request):
+def GetAllPosts(request):
     get_posts = Post.objects.all()
-    serializer = PostSerializer(get_posts)
+    serializer = PostSerializer(get_posts, many=True) # get_posts includes multiple items. So mention that parameter many=True
     
     return Response(serializer.data)
