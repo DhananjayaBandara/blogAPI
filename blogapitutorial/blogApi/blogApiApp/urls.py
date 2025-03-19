@@ -7,4 +7,5 @@ urlpatterns=[
     path('create-new-post/',views.CreatePost),
     path('delete-post/',views.DeletePost),
     path('get-post/',views.GetPost),
+    path('update-post/',views.UpdatePost),
 ]
